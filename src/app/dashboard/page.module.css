@@ -1,0 +1,255 @@
+.container {
+    padding: var(--spacing-8);
+    max-width: 1200px;
+    margin: 0 auto;
+    min-height: 100vh;
+}
+
+.loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 50vh;
+    color: #6b7280;
+    font-size: 1rem;
+}
+
+.header {
+    margin-bottom: var(--spacing-8);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.logo {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--primary);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: var(--spacing-1);
+    display: block;
+}
+
+.title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--on-background);
+    margin: 0;
+}
+
+/* Overall Progress Section */
+.overallProgress {
+    display: flex;
+    gap: var(--spacing-4);
+    margin-bottom: var(--spacing-8);
+    padding: var(--spacing-4);
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-md);
+}
+
+.progressStat {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: var(--spacing-4);
+}
+
+.progressNumber {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: white;
+}
+
+.progressLabel {
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.8);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* Grid */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: var(--spacing-4);
+}
+
+/* Card */
+.card {
+    background: var(--surface);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-4);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--glass-border);
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+
+.cardContent {
+    flex-grow: 1;
+}
+
+.cardTitle {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--on-background);
+    margin-bottom: var(--spacing-1);
+}
+
+.cardDescription {
+    color: #6b7280;
+    font-size: 0.875rem;
+    margin-bottom: var(--spacing-4);
+    line-height: 1.5;
+}
+
+.cardStats {
+    margin-bottom: var(--spacing-4);
+}
+
+.progressBarContainer {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-2);
+    margin-bottom: var(--spacing-2);
+}
+
+.progressBar {
+    flex: 1;
+    height: 8px;
+    background: #E5E7EB;
+    border-radius: var(--radius-full);
+    overflow: hidden;
+}
+
+.progressFill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    border-radius: var(--radius-full);
+    transition: width 0.5s ease;
+}
+
+.progressPercent {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--primary);
+    min-width: 40px;
+    text-align: right;
+}
+
+.statBadges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-2);
+}
+
+.badgeMastered,
+.badgeLearning,
+.badgeNew {
+    padding: 0.25rem 0.625rem;
+    border-radius: var(--radius-full);
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.badgeMastered {
+    background: #D1FAE5;
+    color: #065F46;
+}
+
+.badgeLearning {
+    background: #FEF3C7;
+    color: #92400E;
+}
+
+.badgeNew {
+    background: #DBEAFE;
+    color: #1E40AF;
+}
+
+/* Card Actions */
+.cardActions {
+    display: flex;
+    gap: var(--spacing-2);
+    padding-top: var(--spacing-4);
+    border-top: 1px solid #F3F4F6;
+}
+
+.buttonPrimary {
+    flex: 1;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-hover) 100%);
+    color: white;
+    padding: var(--spacing-2) var(--spacing-4);
+    border-radius: var(--radius-lg);
+    border: none;
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+}
+
+.buttonPrimary:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.buttonOutline {
+    flex: 1;
+    background-color: transparent;
+    color: var(--primary);
+    padding: var(--spacing-2) var(--spacing-4);
+    border-radius: var(--radius-lg);
+    border: 2px solid var(--primary);
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-align: center;
+    transition: background-color 0.2s, transform 0.2s;
+    cursor: pointer;
+}
+
+.buttonOutline:hover {
+    background-color: #EEF2FF;
+    transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .container {
+        padding: var(--spacing-4);
+    }
+
+    .title {
+        font-size: 2rem;
+    }
+
+    .overallProgress {
+        flex-direction: row;
+        padding: var(--spacing-2);
+    }
+
+    .progressStat {
+        padding: var(--spacing-2);
+    }
+
+    .progressNumber {
+        font-size: 1.75rem;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cardActions {
+        flex-direction: column;
+    }
+}
