@@ -1,29 +1,9 @@
 // LocalStorage utility for persisting user progress
 // Handles word mastery status, quiz history, and statistics
 
-export type MasteryStatus = "new" | "learning" | "mastered";
-
-export interface WordProgress {
-    wordId: string;
-    status: MasteryStatus;
-    correctCount: number;
-    incorrectCount: number;
-    lastStudied: string | null; // ISO date string
-    averageResponseTime: number | null; // in milliseconds
-    quizAttempts: QuizAttempt[];
-}
-
-export interface QuizAttempt {
-    date: string; // ISO date string
-    correct: boolean;
-    responseTime: number; // in milliseconds
-}
-
-export interface UserProgress {
-    words: Record<string, WordProgress>;
-    lastStudySession: string | null;
-    totalStudySessions: number;
-}
+// Re-export types from shared types file for backward compatibility
+export type { MasteryStatus, WordProgress, QuizAttempt, UserProgress } from "./types";
+import type { MasteryStatus, WordProgress, QuizAttempt, UserProgress } from "./types";
 
 const STORAGE_KEY = "vocard_user_progress";
 
